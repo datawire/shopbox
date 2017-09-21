@@ -7,9 +7,7 @@ apt-get update && apt-get -y install --no-install-recommends \
     curl \
     netbase \
     python \
-    python-dev \
     python3 \
-    python3-dev \
     software-properties-common \
     sudo
 

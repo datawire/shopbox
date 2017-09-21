@@ -11,7 +11,7 @@ ENV AMBASSADOR_VERSION "0.11"
 ENV FORGE_VERSION      "0.3"
 ENV KUBECTL_VERSION    "1.7.6"
 ENV KUBERNAUT_VERSION  "0.1.37"
-      
+
 # CONFIGURATION
 ARG SCOUT_DISABLE=1
 ENV SCOUT_DISABLE ${SCOUT_DISABLE}
@@ -32,4 +32,5 @@ RUN adduser --shell /bin/bash shopbox && \
 USER shopbox
 WORKDIR /workspace
 
-ENTRYPOINT "/bin/bash"
+ENTRYPOINT ["/entrypoint.sh"]
+
