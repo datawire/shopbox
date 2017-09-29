@@ -18,7 +18,9 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-apt-get update && apt-get -y install docker-ce
+curl -s https://packagecloud.io/install/repositories/datawireio/telepresence/script.deb.sh | bash
+
+apt-get update && apt-get -y install docker-ce telepresence
 
 sed -i.bkp \
     -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' \
