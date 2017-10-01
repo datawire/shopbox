@@ -7,7 +7,6 @@ LABEL PROJECT_REPO_URL         = "git@github.com:datawire/shopbox.git" \
       VENDOR_URL               = "https://datawire.io/"
 
 # SOFTWARE VERSIONS
-ENV AMBASSADOR_VERSION "0.11"
 ENV FORGE_VERSION      "0.3.2"
 ENV KUBECTL_VERSION    "1.7.6"
 ENV KUBERNAUT_VERSION  "0.1.39"
@@ -30,6 +29,8 @@ RUN adduser --shell /bin/bash shopbox && \
     usermod --append --groups sudo,docker shopbox
 
 USER shopbox
+RUN  echo "source <(kubectl completion bash)" >> ~/.bashrc
+
 WORKDIR /workspace
 
 ENTRYPOINT ["/entrypoint.sh"]
