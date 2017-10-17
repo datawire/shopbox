@@ -4,14 +4,14 @@ set -euxo pipefail
 curl -L \
      --output /bin/kubectl \
      https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
-     
+
 curl -L \
      --output /bin/forge \
-     https://s3.amazonaws.com/datawire-static-files/forge/${FORGE_VERSION}/forge
-     
+     https://s3.amazonaws.com/datawire-static-files/forge/${FORGE_VERSION}/forge?x-download=shopbox
+
 curl -L \
      --output /bin/kubernaut \
-     https://s3.amazonaws.com/datawire-static-files/kubernaut/${KUBERNAUT_VERSION}/kubernaut
+     https://s3.amazonaws.com/datawire-static-files/kubernaut/${KUBERNAUT_VERSION}/kubernaut?x-download=shopbox
 
 chmod a+x \
     /bin/kubectl \
