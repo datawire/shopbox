@@ -1,0 +1,11 @@
+FROM datawire/shopbox:latest
+
+# SOFTWARE VERSIONS
+ENV FORGE_VERSION      "0.3.10"
+
+USER root
+
+COPY patch.sh .
+RUN ./patch.sh
+
+USER shopbox
